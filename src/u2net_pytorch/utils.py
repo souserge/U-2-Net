@@ -7,12 +7,12 @@ from torchvision import transforms
 from PIL import Image
 import glob
 
-from data_loader import RescaleT
-from data_loader import ToTensorLab
-from data_loader import SalObjDataset
+from .data_loader import RescaleT
+from .data_loader import ToTensorLab
+from .data_loader import SalObjDataset
 
-from model import U2NET  # full size version 173.6 MB
-from model import U2NETP  # small version u2net 4.7 MB
+from .model import U2NET  # full size version 173.6 MB
+from .model import U2NETP  # small version u2net 4.7 MB
 
 
 # normalize the predicted SOD probability map
