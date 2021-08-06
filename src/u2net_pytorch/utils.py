@@ -42,11 +42,13 @@ def save_output(image_name, pred, d_dir, prefix):
     imo.save(os.path.join(d_dir, prefix + imidx + ".png"))
 
 
-def run_inference(data_dirpath, prediction_dirpath=None, model_name="u2net"):
+def run_inference(
+    data_dirpath, prediction_dirpath=None, model_name="u2net", prefix=None
+):
 
     image_dir = data_dirpath
     prediction_dir = data_dirpath if prediction_dirpath is None else prediction_dirpath
-    prefix = "saliency-map_" + model_name + "_"
+    prefix = prefix if prefix is not None else "saliency-map_" + model_name + "_"
     os.makedirs(prediction_dir, exist_ok=True)
 
     filepath = os.path.realpath(__file__)
